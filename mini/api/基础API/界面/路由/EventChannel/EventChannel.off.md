@@ -1,4 +1,3 @@
-
 # 简介
 在页面间通信中取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数。
 
@@ -9,10 +8,32 @@
 
 # 接口调用
 
-## 入参
-入参结构为：(String eventName, Function callback)。
+## 示例代码
 
-| **属性** | **类型** | **必填** | **描述** |
+### .js 示例代码
+
+```JavaScript
+// 通过 my.navigateTo 打开的页面
+Page({
+  onLoad() {
+    const eventChannel = this.getOpenerEventChannel();
+    const openerToOpened = (data) => {
+      console.log(data);
+    }
+    
+    // 挂载监听事件
+    eventChannel.on('openerToOpened', openerToOpened);
+    
+    // 解除监听事件
+    eventChannel.off('openerToOpened', openerToOpened);
+  }
+});
+```
+
+## 入参
+入参结构为：`(String eventName, Function callback)`。
+
+| **参数** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
 | eventName | String | 是 | 需要取消监听的事件的名称。 |
 | callback | Function | 否 | 事件监听函数。 |

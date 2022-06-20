@@ -1,17 +1,16 @@
-
 # 简介
-智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **用户互动** > **智能客服** > **立即使用** 即可打开云客服免费使用。详情请参见 [智能客服](/mini/operation/custom-service)。
+智能客服能力由蚂蚁集团零号云客服提供。唤起智能客服组件，开通智能客服：进入对应小程序管理后台后，点击  **设置** > **小程序信息** > **在线客服** 即可打开云客服免费使用。详情可查看 [智能客服](https://opendocs.alipay.com/mini/operation/custom-service)。
 
 ## 使用限制
 
-- 版本要求基础库 1.14.1 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
+- 版本要求基础库 1.14.1 或更高版本；支付宝客户端 10.1.10 或更高版本，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 智能客服仅支持企业用户。
 
 # 使用
 
 ## 示例代码
 
-###  集成咨询窗（必选）
+### 集成咨询窗（必选）
 ```html
 <contact-button tnt-inst-id="企业编码" scene="聊天窗编码"/>
 ```
@@ -52,25 +51,19 @@
 | --- | --- | --- |
 | tnt-inst-id | String | 必填。企业唯一编码，一个企业支付宝账号对应一个编码。 |
 | scene | String | 必填。聊天窗编码，每个聊天窗的唯一编码。 |
-| size | Number/String | 选填。咨询按钮大小，正方形设置边长（如25*25 px）。<br />**默认值：** 25<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上、支付宝客户端 [1.12.0](/mini/framework/compatibility) 以及上支持 rpx 单位 |
-| color | String | 选填。咨询按钮颜色，默认白底蓝色。<br />**默认值：** #00A3FF<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
+| size | Number/String | 选填。咨询按钮大小，正方形设置边长（如25*25 px）。<br />**默认值：** 25<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上、支付宝客户端 [1.12.0](https://opendocs.alipay.com/mini/framework/compatibility) 以及上支持 rpx 单位 |
+| color | String | 选填。咨询按钮颜色，默认白底蓝色。<br />**默认值：** #00A3FF<br />**版本要求：** 基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 | icon | ImgUrl | 选填。咨询按钮头像。<br />**版本要求：** 基础库 [1.9.0](/mini/framework/compatibility) 及以上 |
 | alipay-card-no | String | 选填。支付宝访客用户ID（2088开头）。<br />**说明：** 客服回答问题时，如客户已离开咨询窗口，则通过推送消息到支付宝 card 中提醒客户。 |
 | ext-info | String | 选填。该属性主要用于传递一些扩展信息给组件，以实现一些高级功能。该属性值的生成方式为：encodeURIComponent({"字段名":"字段值"})， 其中，字段名和字段值要根据实际使用的功能进行替换。<br />目前通过传入扩展信息可支持的 3 个功能：<br />1.访客名片。需传 cinfo 和 key 两个扩展字段，代码形如在云客服中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。`encodeURIComponent({"cinfo":"生成的 cinfo","key":"生成的key"})`，cinfo 和 key 的值说明 支付宝小程序接入访客名片；<br />2.聊天窗默认带出用户的小程序订单数据。需传 appId 字段，代码形如`encodeURIComponent({"appId":"商户小程序appid"}) `<br />3.未读客服消息同步至"我的小程序-我的"。同样需传 appId 字段，代码形如 `encodeURIComponent({"appId":"商户小程序appid"})`。 |
 
-
-# FAQ
+# 常见问题
 
 ## contact-button 组件写了没展示，如何查看聊天记录？
-首先检查基础版本库是否匹配，然后在 **支付宝 APP** > **朋友** > **服务提醒** 中查看消息记录
+首先检查基础版本库是否匹配，然后在 **支付宝 APP** > **朋友** > **服务提醒** 中查看消息记录。
 
 ## 开通云客服没有加 contact-button 智能客服代码，为何有的手机上显示有的不显示客服图标？
-进入 **小程序控制台** > **设置 **>** 客服设置**，选择是否显示客服图标。
+进入 **小程序控制台** > **设置** > **小程序信息** > **在线客服**，选择是否显示客服图标。
 
 ## 如何获取 tntInstId（企业编码）和 scene（聊天窗编码）？
-在云客服中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。详情请参见 [智能客服](/mini/operation/custom-service)。
-
-# 相关文档
-
-- [智能客服](/mini/operation/custom-service)
-- [button 按钮](/mini/component/button)
+在 [云客服](https://csmng.cloud.alipay.com/ccm.htm#/home) 中进入 **设置** > **服务窗配置** > **聊天窗 URL**。点击操作栏中的 **聊天窗 URL** ，获取 `tntInstId`（企业编码）和 `scene`（聊天窗编码）。详情请参见 [智能客服](https://opendocs.alipay.com/mini/operation/custom-service)。

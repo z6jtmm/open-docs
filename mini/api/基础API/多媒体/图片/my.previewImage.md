@@ -4,15 +4,13 @@
 
 ## 使用限制
 
-- 不支持本地图片路径。
-- 基础库 版本 [1.0.0](https://opendocs.alipay.com/mini/framework/lib) 在 iOS 上不支持 `my.previewImage` 和 `my.chooseImage` 的组合使用。 
 - 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
 ![|127x157](https://cdn.nlark.com/yuque/0/2021/jpeg/179989/1625191726620-5e45ee53-b35c-4a2f-9088-24c5dce03300.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&name=1.jpeg&originHeight=157&originWidth=127&size=19820&status=done&style=stroke&width=127)
 
 ## 效果示例
-![|300x540](https://cdn.nlark.com/yuque/0/2021/gif/179989/1625191739247-40979909-a04d-4601-bf9d-1a4903bf80f8.gif#align=left&display=inline&height=540&margin=%5Bobject%20Object%5D&name=2.gif&originHeight=540&originWidth=300&size=558650&status=done&style=stroke&width=300)
+![|300x650](https://gw.alipayobjects.com/mdn/rms_aba389/afts/img/A*QtdsQIBkcP8AAAAAAAAAAAAAARQnAQ)
 
 # 接口调用
 
@@ -88,7 +86,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| urls | Array | 是 | 要预览的图片 HTTP 链接列表。<br />支持网络 url，apfilePath。 |
+| urls | Array | 是 | 要预览的图片地址。<br />支持网络url、[本地临时文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6)、[本地缓存文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6)，暂不支持[本地用户文件](https://opendocs.alipay.com/mini/03dt4s#%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7%E6%96%87%E4%BB%B6)。 |
 | current | Number | 否 | 当前显示图片索引，默认值为 0，即 urls 中的第一张图片。 |
 | success | Function | 否 | 调用成功的回调函数。 |
 | fail | Function | 否 | 调用失败的回调函数。 |

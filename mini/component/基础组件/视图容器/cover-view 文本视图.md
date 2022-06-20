@@ -1,10 +1,9 @@
-
 # 简介
-覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 [map](component/map)、[canvas](component/canvas)。
+覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 [map](https://opendocs.alipay.com/mini/component/map)、[canvas](https://opendocs.alipay.com/mini/component/canvas)。
 
 ## 使用限制
 
-- 版本要求基础库 1.10.0 及以上，若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
+- 版本要求基础库 1.10.0 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 实际效果请以真机为准。
 
 ## 扫码体验
@@ -12,10 +11,10 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-cover-view?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+
+[小程序在线](https://opendocs.alipay.com/examples/57e4f937-2eb8-4d48-8f9e-7d8027e32149) 
 
 ### .axml 示例代码
 ```html
@@ -98,9 +97,9 @@ cover-image {
 | onTap | EventHandle | 点击事件回调。<br />**版本要求：**基础库 [1.9.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 
 
-# FAQ
+# 常见问题
 
-### cover-view 默认背景白色如何取消？
+### 如何取消cover-view 默认背景白色？
 不支持更改背景色，建议更改字体颜色。
 
 ### cover-view 是否支持圆角和阴影？

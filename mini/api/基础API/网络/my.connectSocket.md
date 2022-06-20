@@ -1,15 +1,15 @@
 
 # 简介
-**my.connectSocket** 用于创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 的连接。一个支付宝小程序在一段时间内只能保留一个 WebSocket 连接，如果当前已存在 WebSocket 连接，那么会自动关闭该连接，并重新创建一个新的 WebSocket 连接。 
+**my.connectSocket** 用于创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 的连接。一个支付宝小程序在一段时间内只能保留一个 WebSocket 连接，如果当前已存在 WebSocket 连接，那么会自动关闭该连接，并重新创建一个新的 WebSocket 连接。 
 
 ## 使用限制
 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
 
 ## 扫码体验
-![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/adccc0ecd4072e1b0fccc2cacf01ec8d.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
+![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/adccc0ecd4072e1b0fccc2cacf01ec8d.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=stroke&width=127)
 
 ## 效果示例
-![|723x407](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fc3f122b0dbbcef4cb9d4b17f5bb0232.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
+![](https://gw.alipayobjects.com/zos/skylark-tools/public/files/fc3f122b0dbbcef4cb9d4b17f5bb0232.png#align=left&display=inline&height=420&margin=%5Bobject%20Object%5D&originHeight=720&originWidth=1280&status=done&style=stroke&width=746)
 
 # 接口调用
 
@@ -41,7 +41,7 @@ Object 类型，属性如下：
 
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| url | String | 是 | 目标服务器接口地址。<br />**注意：** 部分新发布的小程序只支持 wss 协议。 |
+| url | String | 是 | 目标服务器接口地址。<br />**注意：**部分新发布的小程序只支持 wss 协议。 |
 | data | Object | 否 | 请求的参数。 |
 | header | Object | 否 | 设置请求的头部。 |
 | success | Function | 否 | 调用成功的回调函数。 |

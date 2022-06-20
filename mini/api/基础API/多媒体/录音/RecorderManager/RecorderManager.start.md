@@ -1,10 +1,10 @@
-
 # 简介
 开始录音。
 
 ## 使用限制
 
 - 支付宝客户端 10.1.60，**基础库** [1.11.0](https://opendocs.alipay.com/mini/framework/lib) 开始支持，低版本需要做 [兼容处理](https://docs.alipay.com/mini/framework/compatibility)。
+- 使用此 API 前，请先在开放平台控制台 **创建小程序**、**添加能力**，可查看 [接入准备](https://opendocs.alipay.com/mini/02pj5u)。
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 # 接口调用
@@ -20,16 +20,15 @@ recorderManager.start({
 ```
 
 ## 入参
-| **属性** | **类型** | **默认值** | **必填** | **描述** | **备注** |
+| **参数** | **类型** | **默认值** | **必填** | **描述** | **备注** |
 | --- | --- | --- | --- | --- | --- |
 | duration | Number | 60000 | 否 | 录音的时长，单位毫秒（ms），最大值 600000（10 分钟）。 | - |
 | sampleRate | Number | 8000 | 否 | 采样率。 | - |
 | numberOfChannels | Number | 1 | 否 | 录音通道数。 | - |
 | encodeBitRate | Number | 48000 | 否 | 编码码率，有效值见下方 **采样率与编码码率限制 **表。 | - |
-| format | String | AAC | 否 | 音频格式,支持格式：AAC，MP3。 | MP3 从支付宝客户端版本 10.1.80 开始支持。 |
+| format | String | aac | 否 | 音频格式,支持格式：aac、mp3。 | mp3 从支付宝客户端版本 10.1.80 开始支持。 |
 | frameSize | Number | - | 否 | 指定帧大小，单位 KB。传入 frameSize 后，每录制指定帧大小的内容后，会回调录制的文件内容，不指定则不会回调。暂仅支持 MP3 格式。 | 支付宝客户端版本 10.1.80 开始支持。 |
 | audioSource | String | auto | 否 | 指定录音的音频输入源，可通过 [my.getAvailableAudioSources](https://opendocs.alipay.com/mini/00bg4t) 获取当前可用的音频源。 | - |
-
 
 ### object.sampleRate 的合法值
 | **值** | **说明** |
@@ -44,13 +43,11 @@ recorderManager.start({
 | 44100 | 44100 采样率。 |
 | 48000 | 48000 采样率。 |
 
-
 ### object.numberOfChannels 的合法值
 | **值** | **说明** |
 | --- | --- |
 | 1 | 1 个通道。 |
 | 2 | 2 个通道。 |
-
 
 ### 采样率与编码码率限制
 每种采样率有对应的编码码率范围有效值，设置不合法的采样率或编码码率会导致录音失败，具体对应关系如下表。
@@ -67,3 +64,7 @@ recorderManager.start({
 | 44100 | 64000 ~ 320000。 |
 | 48000 | 64000 ~ 320000。 |
 
+# 常见问题 FAQ
+
+## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。

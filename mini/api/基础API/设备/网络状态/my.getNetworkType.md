@@ -1,19 +1,17 @@
-
 # 简介
 **my.getNetworkType** 是获取当前网络状态的 API。
 
 ## 使用限制
-此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- 此 API 支持个人支付宝小程序、企业支付宝小程序使用。
+- Android 用户需要将支付宝客户端的 **获取手机信息** 授权设置为 **始终允许** 才能获取到 4G/5G 的网络类型。若授权设置为 **询问** 或 **拒绝**，则接口无法获取网络类型，`networkType` 的返回值为 `UNKNOWN`。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark-tools/public/files/22ff3ede2bb9a8def0ff2814a28690d2.jpeg#align=left&display=inline&height=157&margin=%5Bobject%20Object%5D&originHeight=157&originWidth=127&status=done&style=none&width=127)
 
 # 接口调用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-get-network-type?theme=light&previewZoom=75&chInfo=openhome-doc) 
-
-## 示例代码
+## 示例
+[小程序在线](https://opendocs.alipay.com/examples/98a14a36-e111-4292-96ee-3ef9122ca63a) 
 
 ### .json 示例代码
 ```json
@@ -54,19 +52,7 @@ Page({
   data: {
     hasNetworkType: false
   },
-  onLoad() {
-    this.onChange = this.onChange.bind(this);
-    // my.onNetworkChange(this.onChange);
-  },
-  onChange(res){
-    console.log('onNetworkChange', res);
-    this.setData({
-      hasNetworkType: true,
-      networkType: res.networkType
-    });
-  },
   onUnload() {
-    // my.offNetworkChange(this.onChange);
   },
   getNetworkType() {
     my.getNetworkType({
@@ -117,4 +103,3 @@ Object 类型，属性如下：
 | --- | --- | --- |
 | networkAvailable | Boolean | 网络是否可用。 |
 | networkType | String | 网络类型值 UNKNOWN / NOTREACHABLE / WIFI / 3G / 2G / 4G / WWAN。 |
-

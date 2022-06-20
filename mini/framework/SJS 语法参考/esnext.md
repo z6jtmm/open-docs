@@ -1,7 +1,7 @@
 SJS 支持部分 ES6 语法。
 
-## let & const
-```javascript
+# let & const
+```JavaScript
 function test(){
   let a = 5;
   if (true) {
@@ -12,8 +12,8 @@ function test(){
 }
 ```
 
-## 箭头函数
-```
+# 箭头函数
+```JavaScript
 const a = [1,2,3];
 const double = x => x * 2; // 箭头函数
 console.log(a.map(double));
@@ -28,8 +28,8 @@ var bob = {
 console.log(bob.printFriends());
 ```
 
-##  更简洁的对象字面量（enhanced object literal）
-```
+#  更简洁的对象字面量（enhanced object literal）
+```JavaScript
 var handler = 1;
 var obj = {
   handler, // 对象属性
@@ -38,16 +38,17 @@ var obj = {
   },
 };
 ```
-**注意：** 不支持 super 关键字，不能在对象方法中使用 super。
 
-## 模板字符串（template string）
-```
+**注意**：不支持 super 关键字，不能在对象方法中使用 super。
+
+# 模板字符串（template string）
+```JavaScript
 const h = 'hello';
 const msg = `${h} alipay`;
 ```
 
-## 解构赋值（Destructuring）
-```
+# 解构赋值（Destructuring）
+```JavaScript
 // array 解构赋值
 var [a, ,b] = [1,2,3];
 a === 1;

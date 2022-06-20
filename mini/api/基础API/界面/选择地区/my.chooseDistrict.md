@@ -1,13 +1,13 @@
-
 # 简介
+
 **my.chooseDistrict**  是用于使用支付宝统一样式选择地区的 API。
 
 数据层面支持：
 
 1. 全量地区数据自定义。
-1. 内置数据能力，支持境内城市数据、境外/港澳台城市数据。
-1. 支持基于内置数据差量自定义。
-1. 地区选择支持级联交互。
+2. 内置数据能力，支持境内城市数据、境外/港澳台城市数据。
+3. 支持基于内置数据差量自定义。
+4. 地区选择支持级联交互。
 
 ## 使用限制
 
@@ -15,6 +15,7 @@
 - 此 API 暂仅支持企业支付宝小程序使用。
 
 ## 扫码体验
+
 ![|100x124](https://cdn.nlark.com/yuque/0/2021/png/179989/1624869024841-78a3bc1b-7ff9-458d-bd7d-6978759f3979.png#align=left&display=inline&height=124&margin=%5Bobject%20Object%5D&name=my.chooseDistrict_1.png&originHeight=124&originWidth=100&size=11494&status=done&style=stroke&width=100)
 
 # 接口调用
@@ -22,6 +23,7 @@
 ## 示例代码
 
 ### .js 示例代码
+
 ```javascript
 my.chooseDistrict({        
   mode:2,
@@ -182,61 +184,12 @@ my.chooseDistrict({
 })
 ```
 
-## ﻿入参
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| **境内场景** |  |  |  |
-| mainTitle | String | 否 | 境内 Tab 自定义标题。 |
-| mainHeadList | Array | 否 | 头部自定义对象数组。如定位区块、热门城市区块。对象值请参见下方 **HeadModel 表**。 |
-| mainNormalList | Array | 否 | 底部城市列表。<br />当对象为空时，默认使用内置的境内城市列表填充。对象值请参见 **ItemModel 表**。 |
-| mainMergeOptions | Object | 否 | 修改内置数据的参数接口。传值方式为{“key”,"value"}。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。<br /><br />仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<br />{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}<br /><br />value 为空代表删除对应 adCode 的城市；<br />value 不为空代表更新对应 adCode 的城市。 |
-| **境外 / 港澳台场景** |  |  |  |
-| seniorTitle | String | 否 | 境外 Tab 自定义标题。 |
-| seniorPageList | Array | 否 | 境外多 tab 数据集合, 对象值参见 **PageModel 表**。<br />如果对象为空时，默认使用内置的境外城市列表填充。 |
-| **通用场景** |  |  |  |
-| mode | Int | 是 | 指定场景。枚举如下：<br /><ul><li>0：展示境内；</li><li>1：展示境外；</li><li>2：展示境内+境外。</li> |
-| src | String | 否 | 自定义数据支持文件读取方式。自定义数据量大时，建议使用小程序内置离线包方式，src 为离线包相对地址，文件内参数格式同接口定义。 |
-| success | Function | 否 | 成功回调。 |
-| fail | Function | 否 | 失败回调。 |
+### .json 示例代码
 
+#### src 模式
 
-### HeadModel 表
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| title | String | 是 | 区块名，如“热门城市”。 |
-| type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li> |
-| list | Array | 否 | 区块城市列表。不支持嵌套，对象值请参见 **ItemModel 表**。 |
-
-
-### ItemModel 表
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| name | String | 是 | 城市名。 |
-| adCode | String | 是 | 行政区划代码。不同行政区域对应的代码可参见 [中华人民共和国县以上行政区划代码](http://www.mca.gov.cn/article/sj/xzqh/1980/201803/201803131454.html)。 |
-| spell | String | 否 | 城市名对应拼音拼写，方便用户检索。 |
-| appendName | String | 否 | 子标题。 |
-| ext | String | 否 | 额外信息。 |
-| subList | Array | 否 | 支持级联，自定义次级城市列表，列表内对象字段见 **ItemModel 表**。 |
-
-
-### PageModel 表 (境外样式下需要)
-| **属性** | **类型** | **必填** | **描述** |
-| --- | --- | --- | --- |
-| title | String | 是 | 境外左侧 tab 名称，不带左侧 tab 时可不填。 |
-| headList | Array | 否 | 头部对象集合，不支持嵌套，对象值请参见 **HeadModel 表**。 |
-| normalList | Array | 否 | 城市列表，对象值请参见 **ItemModel 表**。 |
-
-
-### success 返回值说明
-| **属性** | **类型** | **描述** |
-| --- | --- | --- |
-| name | String | 城市名称。 |
-| adCode | String | 城市编码。 |
-| ext | String | 自定义扩展字段透传。 |
-
-
-### src 模式
 将 chooseDistrict 的入参通过文件方式添加到小程序中，文件内容为接口入参。可应对入参数据量大的场景，如新建 chooseDistrict.json。
+
 ```json
 // chooseDistrict.json 参数参见文档说明
 {
@@ -251,4 +204,119 @@ my.chooseDistrict({
 }
 ```
 
+## 入参
 
+<table>
+  <tr>
+    <th><b>参数</b></th>
+    <th><b>类型</b></th>
+    <th><b>必填</b></th>
+    <th><b>描述</b></th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>境内场景</b></td>
+  </tr>
+  <tr>
+    <td>mainTitle</td>
+    <td>String</td>
+    <td>否</td>
+    <td>境内 Tab 自定义标题。</td>
+  </tr>
+  <tr>
+    <td>mainHeadList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>头部自定义对象数组。如定位区块、热门城市区块。对象值可查看下方 <b>HeadModel</b>。</td>
+  </tr>
+  <tr>
+    <td>mainNormalList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>底部城市列表。</br>当对象为空时，默认使用内置的境内城市列表填充。对象值可查看 <b>ItemModel</b>。</td>
+  </tr>
+  <tr>
+    <td>mainMergeOptions</td>
+    <td>Object</td>
+    <td>否</td>
+  <td>修改内置数据的参数接口。传值方式为 <code>{“key”,"value"}</code>。其中 key 是需要修改的城市的 adCode， value 是展示的城市名。</br>仅在 mainNormalList 为空时生效，支持对默认境内数据差量更新:<code>{"371200":"","542400":"","540600":"那曲","659010":"胡杨河市"}</code>。</br>value 为空代表删除对应 adCode 的城市；value 不为空代表更新对应 adCode 的城市。</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>境外 / 港澳台场景</b></td>
+  </tr>
+  <tr>
+    <td>seniorTitle</td>
+    <td>String</td>
+    <td>否</td>
+    <td>境外 Tab 自定义标题。</td>
+  </tr>
+  <tr>
+    <td>seniorPageList</td>
+    <td>Array</td>
+    <td>否</td>
+    <td>境外多 tab 数据集合, 对象值可查看 <b>PageModel</b>。</br>如果对象为空时，默认使用内置的境外城市列表填充。</td>
+  </tr>
+  <tr>
+    <td colspan="4"><b>通用场景</b></td>
+  </tr>
+  <tr>
+    <td>mode</td>
+    <td>int</td>
+    <td>是</td>
+    <td>指定场景。枚举如下：</br><ul><li>0：展示境内。</li><li>1：展示境外。</li><li>2：展示境内+境外。</li></ul></td>
+  </tr>
+  <tr>
+    <td>src</td>
+    <td>String</td>
+    <td>否</td>
+    <td>自定义数据文件地址。自定义数据量大时，建议将数据文件内置在小程序内。文件内参数格式同接口定义。</td>
+  </tr>
+  <tr>
+    <td>success</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>成功回调。</td>
+  </tr>
+  <tr>
+    <td>fail</td>
+    <td>Function</td>
+    <td>否</td>
+    <td>失败回调。</td>
+  </tr>
+</table>
+
+### HeadModel
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| title | String | 是 | 区块名，如“热门城市”。 |
+| type | Int | 否 | 模块类型。枚举如下：<br /><ul><li>0：常规城市；</li><li>1：定位模块；</li><li>2：展示支付宝提供的热门城市模块。</li></ul> |
+| list | Array | 否 | 区块城市列表。不支持嵌套，对象值可查看 **ItemModel**。 |
+
+
+### ItemModel
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| name | String | 是 | 城市名。 |
+| adCode | String | 是 | 行政区划代码。不同行政区域对应的代码可查看 [中华人民共和国县以上行政区划代码](http://www.mca.gov.cn/article/sj/xzqh/1980/201803/201803131454.html)。 |
+| spell | String | 否 | 城市名对应拼音拼写，方便用户检索。 |
+| appendName | String | 否 | 子标题。 |
+| ext | String | 否 | 额外信息。 |
+| subList | Array | 否 | 支持级联，自定义次级城市列表，列表内对象字段可查看 **ItemModel**。 |
+
+
+### PageModel (境外样式下需要)
+
+| **参数** | **类型** | **必填** | **描述** |
+| --- | --- | --- | --- |
+| title | String | 是 | 境外左侧 tab 名称，不带左侧 tab 时可不填。 |
+| headList | Array | 否 | 头部对象集合，不支持嵌套，对象值可查看 **HeadModel**。 |
+| normalList | Array | 否 | 城市列表，对象值可查看 **ItemModel**。 |
+
+### Function success
+
+success 回调函数会携带一个 Object 类型的对象，其属性如下：
+
+| **属性** | **类型** | **描述** |
+| --- | --- | --- |
+| name | String | 城市名称。 |
+| adCode | String | 城市编码。 |
+| ext | String | 自定义扩展字段透传。 |

@@ -1,4 +1,3 @@
-
 # 简介
 嵌入页面的滚动选择器。 其中只可放置 picker-view-column 组件，其它节点不会显示。如需获取数组中值，可以先获取索引 index 然后通过 index 再获取数组中值。
 
@@ -12,10 +11,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-picker-view?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/009a0d12-7f54-4cbf-afbb-47820cb6aec2)
 
 ### .axml 示例代码
 ```html
@@ -70,7 +68,7 @@ Page({
 ```
 
 ## picker-view-column 滚动选择器子项
-滚动选择器子项。仅可放置于 picker-view 中，其孩子节点的高度会自动设置成与 picker-view 的选中框的高度一致。**说明：** 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 `a:if` 切换，即： 推荐示例：
+滚动选择器子项。仅可放置于 picker-view 中，其孩子节点的高度会自动设置成与 picker-view 的选中框的高度一致。<br />**说明：** 该组件内部请勿放入 hidden 或 display none 的节点，需要隐藏请用 `a:if` 切换，即： <br /><br />推荐示例：<br />
 ```html
 <view a:if="{{xx}}"><picker-view/></view>
 ```

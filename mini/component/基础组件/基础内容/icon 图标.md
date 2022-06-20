@@ -3,7 +3,7 @@
 图标。
 
 ## 使用限制
-
+- icon组件不支持onTap、catchTap等点击事件。
 - 跳转页面后左上角显示返回上一页 icon，不支持隐藏。
 - icon 中所应用的样式如果是插件中的样式，建议修改样式定义的 `class` 名等信息，否则 icon 中不写插件代码显示正常，添加插件代码 icon 显示不正常。
 
@@ -12,8 +12,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-icon?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
+
+[小程序在线](https://opendocs.alipay.com/examples/863388c7-ad35-40db-be75-c84d8ce70b07) 
 
 ### .axml 示例代码
 ```html

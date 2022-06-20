@@ -1,10 +1,8 @@
-
 # 简介
-[movable-view](component/movable-view) 的可移动区域。
+[movable-view](https://opendocs.alipay.com/mini/component/movable-view) 的可移动区域。
 
 ## 使用限制
-
-- 版本要求基础库 1.11.0 或更高版本；若版本较低，建议做 [兼容处理](/mini/framework/compatibility)。
+- 版本要求基础库 1.11.0 或更高版本；若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 - 必须设置 `width` 和 `height` 属性，不设置则默认为 10px。
 
 ## 扫码体验
@@ -12,10 +10,9 @@
 
 # 使用 
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-movable-view?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/5ebb5fb0-1a97-4adc-9c52-95a6dba015ce) 
 
 ### .json 示例代码
 ```json
@@ -123,5 +120,5 @@ movable-view {
 ## 属性说明
 | **属性** | **类型** | **必填** | **描述** |
 | --- | --- | --- | --- |
-| scale-area | Boolean | 否 | 当里面的 movable-view 设置为支持双指缩放时，设置此值可将缩放手势生效区域修改为整个 movable-area。<br />**默认值：** false<br />**版本要求：** 基础库 [1.20.0](/mini/framework/compatibility) 及以上 |
+| scale-area | Boolean | 否 | 当里面的 movable-view 设置为支持双指缩放时，设置此值可将缩放手势生效区域修改为整个 movable-area。<br />**默认值：** false<br />**版本要求：** 基础库 [1.20.0](https://opendocs.alipay.com/mini/framework/compatibility) 及以上 |
 

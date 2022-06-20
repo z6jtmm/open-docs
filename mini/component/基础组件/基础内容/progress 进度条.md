@@ -1,4 +1,3 @@
-
 # 简介
 当页面在请求数据过程中，会出现信息读取的进度过程。
 
@@ -7,10 +6,9 @@
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-progress?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/d87d102f-8943-42e5-acb3-515308b6f4ae) 
 
 ### .axml 示例代码
 ```html

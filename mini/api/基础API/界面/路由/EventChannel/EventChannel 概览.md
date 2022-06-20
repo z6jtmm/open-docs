@@ -1,8 +1,9 @@
-
 # 简介
+
 页面间事件通信通道。
 
 ## 使用限制
+
 版本要求基础库 [2.7.7](https://opendocs.alipay.com/mini/framework/lib-upgrade-v2) 及以上，若版本较低，建议做 [兼容处理](https://opendocs.alipay.com/mini/framework/compatibility)。
 
 # 方法

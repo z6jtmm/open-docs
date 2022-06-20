@@ -1,5 +1,5 @@
-
 # 简介
+
 **my.connectBLEDevice** 是连接低功耗蓝牙设备的 API。
 
 ## 使用限制
@@ -184,7 +184,9 @@ Page({
           return;
         }
         my.alert({ content: JSON.stringify(res) });
-        devid = res.devices[0].deviceId;
+        this.setData({
+          devid: res.devices[0].deviceId,
+        });
       },
       fail: error => {
         my.alert({ content: JSON.stringify(error) });
@@ -376,7 +378,7 @@ Page({
   },
   onBluetoothAdapterStateChange(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '本机蓝牙状态变化：' + JSON.stringify(res) });
     }
@@ -395,7 +397,7 @@ Page({
   },
   onBLEConnectionStateChanged(res) {
     if (res.error) {
-      my.alert({ content: JSON.stringify(error) });
+      my.alert({ content: JSON.stringify(res.error) });
     } else {
       my.alert({ content: '连接状态变化：' + JSON.stringify(res) });
     }
@@ -422,3 +424,7 @@ Object 类型，属性如下：
 | fail | Function | 否 | 调用失败的回调函数。 |
 | complete | Function | 否 | 调用结束的回调函数（调用成功、失败都会执行）。 |
 
+# 常见问题 FAQ
+
+## Q：如果系统权限未开启，接口调用报错，如何引导开启系统权限？
+A：可以调用 [my.showAuthGuide](https://opendocs.alipay.com/mini/api/show-auth-guide) 引导用户开启相关系统权限。

@@ -6,16 +6,16 @@
 
 - iOS 系统支付宝客户端版本 10.1.80 及以上不支持 `focus="{{true}}"` 自动唤起。
 - 小程序中 input 如果父类是 `position: fixed`，可以加上 `enableNative="{{false}}"`，解决输入框错位/光标上移问题。个别情况下定位问题会导致光标错位，所以需要把 false 改为 true，代码块为 `enableNative="{{true}}"`。
+- confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system。
 
 ## 扫码体验
 ![|127x157](https://gw.alipayobjects.com/zos/skylark/16663486-d067-4b4c-9aed-d746fa3fde46/2018/jpeg/a1d198e6-12e1-43e5-a8a1-cead5a15107a.jpeg)
 
 # 使用
 
-## Herbox
-[小程序在线](https://herbox-embed.alipay.com/s/doc-input?theme=light&previewZoom=75&chInfo=openhome-doc) 
+## 示例
 
-## 示例代码
+[小程序在线](https://opendocs.alipay.com/examples/b6fda4f9-4676-480e-8b19-292df798e4f0) 
 
 ### .axml 示例代码
 ```html
@@ -260,7 +260,7 @@ Page({
 需要添加属性 `controlled="{{true}}"` ，也可以在 `onInput` 事件里把输入的值通过 setData 再赋值给 value，再去 setData 设置 value。
 ```javascript
 //axml
-<input class="internet_input" value="{{textValue}}" onInput="keyNum" controlled={{true}} type="text"  />
+<input class="internet_input" value="{{textValue}}" onInput="keyNum" controlled="{{true}}" type="text"  />
 //input如何用js清空
 keyNum() {
       this.setData({
